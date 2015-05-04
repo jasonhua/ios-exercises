@@ -30,7 +30,7 @@
     /* WORK HERE */
     NSInteger integer = integer1;
     NSInteger isGreaterThan = integer2;
-    BOOL numCompare = integer > isGreaterThan ? @"Yes" : @"No";
+    BOOL numCompare = integer > isGreaterThan;
     return numCompare;
 }
 
