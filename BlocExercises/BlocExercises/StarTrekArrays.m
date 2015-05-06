@@ -12,7 +12,10 @@
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
     /* WORK HERE */
-    return @[];
+    NSString *array0fStarTreckCharactersFromString = characterString;
+    NSArray *starTrekTrueArray = [array0fStarTreckCharactersFromString componentsSeparatedByString:@", "];
+//    [starTrekTrueArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)];
+    return @[starTrekTrueArray];
 }
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
