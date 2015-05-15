@@ -12,25 +12,39 @@
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
     /* WORK HERE */
-    NSString *array0fStarTreckCharactersFromString = characterString;
-    NSArray *starTrekTrueArray = [array0fStarTreckCharactersFromString componentsSeparatedByString:@", "];
-//    [starTrekTrueArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)];
-    return @[starTrekTrueArray];
+    NSArray *newArray = [characterString componentsSeparatedByString:@";"];
+    [newArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {}];
+    return newArray;
 }
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
     /* WORK HERE */
-    return @"";
+    NSMutableArray *changeCharArray = [characterArray mutableCopy];
+    [changeCharArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return NSOrderedAscending;
+    }];
+    NSString *orderedCharacters = [changeCharArray componentsJoinedByString:@";" ];
+    
+    return orderedCharacters;
 }
 
 - (NSArray *) alphabeticallySortedStarTrekCharactersFromArray:(NSArray *)characterArray {
     /* WORK HERE */
-    return @[];
+    NSMutableArray *originalArray = [characterArray mutableCopy];
+    NSSortDescriptor *sortDescript = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    [originalArray sortUsingDescriptors:@[sortDescript]];
+    return originalArray;
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
     /* WORK HERE */
-    return NO;
+    NSMutableArray *detectArray = [characterArray mutableCopy];
+    NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'worf'"];
+    [detectArray filteredArrayUsingPredicate:containsWorf];
+    for (NSArray *validArray in detectArray) {
+        return validArray;
+    }
+    return containsWorf;
 }
 
 @end
