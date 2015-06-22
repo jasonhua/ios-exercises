@@ -12,35 +12,53 @@
 
 - (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
-    id favDrink = characterDictionary[@"favorite drink"];
-    if (favDrink != nil && [favDrink isKindOfClass:[NSString class]]) {
-    }
-    return favDrink;
+    NSString *favoriteDrink;
+    
+    favoriteDrink = [characterDictionary objectForKey:@"favorite drink"];
+    
+    return favoriteDrink;
 }
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
     /* WORK HERE */
     
-//    NSMutableArray *icharacterArray = [charactersArray mutableCopy];
-//    NSPredicate *characterDrinks = [NSPredicate predicateWithFormat:@"favorite drink"];
-//    [icharacterArray filteredArrayUsingPredicate:characterDrinks];
+    NSMutableArray *drinkArray = [[NSMutableArray alloc]init];
     
-    NSDictionary *newDictionary = [charactersArray objectAtIndex:0]; //need > 1 item to test correctly
-    NSMutableDictionary *newCharacterArray = [newDictionary mutableCopy];
-    id favDrinks = newCharacterArray[@"favorite drink"];
-    if (favDrinks != nil && [favDrinks isKindOfClass:[NSArray class]]) {
-    //need to change NSdictionary into NSarray and return value
+    for (NSDictionary *starTrekDictionaries in charactersArray) {
+    
+        [drinkArray addObject: [starTrekDictionaries objectForKey:@"favorite drink"]];
+        
     }
     
-    return favDrinks;
+    NSArray *newDrinkArray = [[NSArray alloc] initWithArray:drinkArray];
+    
+    // alloc and init a new NSarray with the objects from drink array, and return the new array
+    // initWithArray
+    
+    return newDrinkArray;
+    
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
-    NSMutableDictionary *changingQuotes = [characterDictionary mutableCopy];
-    [changingQuotes setObject:"thank god for google" forkey:@"quotes"];
-    
+//    NSMutableDictionary *changingQuotes = [characterDictionary mutableCopy];
+//    [changingQuotes setObject:"thank god for google" forkey:@"quotes"];
+//    
     return @{};
 }
 
 @end
+
+
+ //@[wolf, picard]
+
+/*
+
+1st time:
+
+starTrekDictionaries = wolf
+
+ 2nd time:
+ 
+ 
+ */
