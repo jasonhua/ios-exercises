@@ -24,9 +24,9 @@
     
     NSMutableArray *drinkArray = [[NSMutableArray alloc]init];
     
-    for (NSDictionary *starTrekDictionaries in charactersArray) {
+    for (NSDictionary *stCharacters in charactersArray) {
     
-        [drinkArray addObject: [starTrekDictionaries objectForKey:@"favorite drink"]];
+        [drinkArray addObject: [stCharacters objectForKey:@"favorite drink"]];
         
     }
     
@@ -41,10 +41,25 @@
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
-//    NSMutableDictionary *changingQuotes = [characterDictionary mutableCopy];
-//    [changingQuotes setObject:"thank god for google" forkey:@"quotes"];
+    
+    NSMutableDictionary *allQuotes = [[NSMutableDictionary alloc]init];
+
+    // ALL THESE COMMENTS IS CODE I WROTE THAT DROVE ME INSANE #FML -- I don't know what I'm doing but I used this to figure it out: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueCoding/Articles/BasicPrinciples.html#//apple_ref/doc/uid/20002170-BAJEAIEE
+    
+    
+//    NSString *string = [allQuotes valueForKey:@"quote"];
+    [allQuotes setValue:@"What the hell am I doing?" forKey:@"quote"];
+    
+//    for (NSString *addQuote in [allQuotes allKeys]) {
+//        [self setValue:allQuotes[addQuote] forKey:@"quote"];
+//    }
+    
+    
+//  option 1
+//    NSMutableDictionary *allQuotes = [characterDictionary mutableCopy];
+//    [allQuotes :@"What in the gods name is that?" objectForKey:@"quote"];
 //    
-    return @{};
+    return allQuotes;
 }
 
 @end
