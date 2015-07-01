@@ -12,25 +12,7 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    
-//////////////////////////////*REFRACTOR BEGIN*/
-//    NSInteger numAssign ()
-//    {
-//        if (number <= otherNumber) {
-//            NSInteger lowerNum = number;
-//            NSInteger higherNum = otherNumber;
-//        } else if (number > otherNumber) {
-//            NSInteger lowerNum = otherNumber;
-//            NSInteger higherNum = number;
-//        }
-//    }
-//    
-//    NSString *numbers = @"";
-//    
-//    for (lowerNum = lowerNum; lowerNum <= higherNum; lowerNum++) {
-//        numbers = [NSString stringWithFormat:@"%@%ld", numbers, lowerNum];
-//    }
-//////////////////////////////*REFRACTOR END*/
+   
     
     NSString *numbers = @"";
     if (number <= otherNumber) {
