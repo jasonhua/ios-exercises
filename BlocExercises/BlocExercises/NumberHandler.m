@@ -55,11 +55,13 @@
     NSSortDescriptor *sortNum = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES];
     [copyNum sortUsingDescriptors:@[sortNum]];
     
-    NSNumber *finally = [NSNumber numberWithInteger:(int)copyNum[0]];
+//    [copyNum sortedArrayUsingSelector:@selector(intValue)];???
     
-//    [copyNum sortedArrayUsingSelector:@selector(intValue)];
+//    NSNumber *finally = [NSNumber numberWithInt:(int)firstObject];
     
-    return (int)finally;
+    return [[copyNum firstObject] integerValue];
+    
 }
 
+//
 @end
