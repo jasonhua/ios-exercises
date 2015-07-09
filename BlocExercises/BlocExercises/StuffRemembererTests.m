@@ -38,6 +38,8 @@
     NSMutableArray *otherArray = [self.rememberer arrayYouShouldRemember];
     XCTAssertEqual(someArray, otherArray, @"These aren't the same array.");
 }
+//XCTAssertEqual looks for the same array and address
+
 
 - (void)testThatArrayIsCopied
 {
@@ -47,6 +49,8 @@
     XCTAssertEqualObjects(someArray, otherArray, @"These arrays aren't equal.");
     XCTAssertNotEqual(someArray, otherArray, @"These arrays are the same instance, but one is supposed to be a copy of the other.");
 }
+
+//XCTAssertEqual looks for a copied array that's not the same address
 
 - (void)testThatFloatIsRemembered
 {
